@@ -12,13 +12,13 @@ print("Username:", username)
 print("Domain:", domain_)
 
 # Method 2: Using index and slicing
-
-at_symbol_index = email.index("@")
-username2 = email[:at_symbol_index]
-domain2 = email[at_symbol_index + 1 :]
-
 # index() method finds the first occurrence of the specified value
 
-print("Username (method 2):", username2)
-print("Domain (method 2):", domain2)
 
+at_symbol_index = email.index("@")
+username_manual = email[:at_symbol_index]
+domain_manual = email[at_symbol_index + 1 :]
+
+
+print("Username (method 2):", username_manual)
+print("Domain (method 2):", domain_manual)
