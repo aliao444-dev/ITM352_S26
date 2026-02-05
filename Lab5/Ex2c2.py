@@ -21,6 +21,5 @@ trip_index = int(trip_num) - 1
 
 print(f"\nduration: {trips_list[trip_index]['duration']} miles")
 print(f"Fare: ${trips_list[trip_index]['fare']:.2f}")
-
 #print(f"Duration: {list(trips.keys())[trip_index]} miles")
 #print(f"Fare: ${list(trips.values())[trip_index]:.2f}")

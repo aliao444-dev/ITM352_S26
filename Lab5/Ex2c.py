@@ -11,3 +11,4 @@ trip_index = int(trip_num) - 1
 # This ^ autofill can work but we want to use the dictionary we made
 print(f"Duration: {list(trips.keys())[trip_index]} miles")
 print(f"Fare: ${list(trips.values())[trip_index]:.2f}")
+# Ask copilot Given the trip_durations and trip_fares createa. list of dictionaires where each dictionary represents a trip
