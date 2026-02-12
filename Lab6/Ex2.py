@@ -40,6 +40,6 @@ for my_list, expected in test_cases:
     
     # Verify the result matches expected
     if result == expected:
-        print("✓ PASS")
+        print("PASS")
     else:
-        print(f"✗ FAIL - Got '{result}' but expected '{expected}'")
+        print(f"FAIL - Got '{result}' but expected '{expected}'")
