@@ -1,4 +1,5 @@
-for num in range(1, 50, 51):
+for num in range(0, 51):
     odd_value = 2* num + 1
-    print(odd_value)
+    if odd_value < 50:
+        print(odd_value)
 
