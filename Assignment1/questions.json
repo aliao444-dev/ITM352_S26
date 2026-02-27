@@ -1,0 +1,72 @@
+[
+    {
+        "question": "Which data type is used to store a sequence of immutable values in Python?",
+        "options": {
+            "a": "List",
+            "b": "Dictionary",
+            "c": "Tuple",
+            "d": "Set"
+        },
+        "answer": "c"
+    },
+    {
+        "question": "What is the output of: print(type(3.14))?",
+        "options": {
+            "a": "<class 'int'>",
+            "b": "<class 'float'>",
+            "c": "<class 'str'>",
+            "d": "<class 'double'>"
+        },
+        "answer": "b"
+    },
+    {
+        "question": "Which keyword is used to define a function in Python?",
+        "options": {
+            "a": "function",
+            "b": "func",
+            "c": "define",
+            "d": "def"
+        },
+        "answer": "d"
+    },
+    {
+        "question": "What does the len() function return for the string 'Hello'?",
+        "options": {
+            "a": "4",
+            "b": "5",
+            "c": "6",
+            "d": "It raises an error"
+        },
+        "answer": "b"
+    },
+    {
+        "question": "Which loop is guaranteed to execute its body at least once?",
+        "options": {
+            "a": "for loop",
+            "b": "while loop",
+            "c": "Python has no such loop",
+            "d": "Both for and while"
+        },
+        "answer": "c"
+    },
+    {
+        "question": "What symbol is used for single-line comments in Python?",
+        "options": {
+            "a": "//",
+            "b": "/*",
+            "c": "#",
+            "d": "--"
+        },
+        "answer": "c"
+    },
+    {
+        "question": "What is the index of the first element in a Python list?",
+        "options": {
+            "a": "1",
+            "b": "-1",
+            "c": "0",
+            "d": "It depends on the list"
+        },
+        "answer": "c"
+    }
+]
