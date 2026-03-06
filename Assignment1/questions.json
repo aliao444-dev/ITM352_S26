@@ -1,72 +1,386 @@
 [
     {
-        "question": "Which data type is used to store a sequence of immutable values in Python?",
+        "category": "Technology",
+        "question": "What does HTML stand for?",
         "options": {
-            "a": "List",
-            "b": "Dictionary",
-            "c": "Tuple",
-            "d": "Set"
+            "a": "Hyper Text Markup Language",
+            "b": "High Transfer Markup Language",
+            "c": "Hyper Transfer Method Language",
+            "d": "Home Tool Markup Language"
         },
-        "answer": "c"
+        "answer": "a",
+        "media": null
     },
     {
-        "question": "What is the output of: print(type(3.14))?",
+        "category": "Technology",
+        "question": "Which data type is used to store a sequence of characters in Python?",
         "options": {
-            "a": "<class 'int'>",
-            "b": "<class 'float'>",
-            "c": "<class 'str'>",
-            "d": "<class 'double'>"
+            "a": "int",
+            "b": "float",
+            "c": "str",
+            "d": "bool"
         },
-        "answer": "b"
+        "answer": "c",
+        "media": null
     },
     {
-        "question": "Which keyword is used to define a function in Python?",
+        "category": "Technology",
+        "question": "What symbol is used to begin a comment in Python?",
         "options": {
-            "a": "function",
-            "b": "func",
-            "c": "define",
-            "d": "def"
+            "a": "//",
+            "b": "/*",
+            "c": "--",
+            "d": "#"
         },
-        "answer": "d"
+        "answer": "d",
+        "media": null
     },
     {
-        "question": "What does the len() function return for the string 'Hello'?",
+        "category": "Technology",
+        "question": "Which HTTP method is typically used to submit form data to a server?",
+        "options": {
+            "a": "GET",
+            "b": "POST",
+            "c": "PUT",
+            "d": "DELETE"
+        },
+        "answer": "b",
+        "media": null
+    },
+    {
+        "category": "Technology",
+        "question": "What does CSS stand for?",
+        "options": {
+            "a": "Creative Style Sheets",
+            "b": "Computer Style Syntax",
+            "c": "Cascading Style Sheets",
+            "d": "Colorful Style Sheets"
+        },
+        "answer": "c",
+        "media": null
+    },
+    {
+        "category": "Technology",
+        "question": "Which of the following is a Python list?",
+        "options": {
+            "a": "{1, 2, 3}",
+            "b": "(1, 2, 3)",
+            "c": "[1, 2, 3]",
+            "d": "<1, 2, 3>"
+        },
+        "answer": "c",
+        "media": null
+    },
+    {
+        "category": "Technology",
+        "question": "What does JSON stand for?",
+        "options": {
+            "a": "JavaScript Object Notation",
+            "b": "Java Serialized Object Node",
+            "c": "JavaScript Ordered Names",
+            "d": "Java Standard Output Network"
+        },
+        "answer": "a",
+        "media": null
+    },
+    {
+        "category": "History",
+        "question": "In what year did World War II end?",
+        "options": {
+            "a": "1943",
+            "b": "1944",
+            "c": "1945",
+            "d": "1946"
+        },
+        "answer": "c",
+        "media": null
+    },
+    {
+        "category": "History",
+        "question": "Who was the first President of the United States?",
+        "options": {
+            "a": "John Adams",
+            "b": "Thomas Jefferson",
+            "c": "Benjamin Franklin",
+            "d": "George Washington"
+        },
+        "answer": "d",
+        "media": null
+    },
+    {
+        "category": "History",
+        "question": "In what year did the Berlin Wall fall?",
+        "options": {
+            "a": "1987",
+            "b": "1989",
+            "c": "1991",
+            "d": "1993"
+        },
+        "answer": "b",
+        "media": null
+    },
+    {
+        "category": "History",
+        "question": "Who wrote the Declaration of Independence?",
+        "options": {
+            "a": "George Washington",
+            "b": "Benjamin Franklin",
+            "c": "Thomas Jefferson",
+            "d": "John Adams"
+        },
+        "answer": "c",
+        "media": null
+    },
+    {
+        "category": "History",
+        "question": "Which ancient wonder was located in Alexandria, Egypt?",
+        "options": {
+            "a": "The Colossus of Rhodes",
+            "b": "The Hanging Gardens",
+            "c": "The Statue of Zeus",
+            "d": "The Lighthouse of Alexandria"
+        },
+        "answer": "d",
+        "media": null
+    },
+    {
+        "category": "NBA Trivia",
+        "question": "Which team has won the most NBA championships in history?",
+        "options": {
+            "a": "Los Angeles Lakers",
+            "b": "Chicago Bulls",
+            "c": "Boston Celtics",
+            "d": "Golden State Warriors"
+        },
+        "answer": "c",
+        "media": null
+    },
+    {
+        "category": "NBA Trivia",
+        "question": "Who scored 100 points in a single NBA game?",
+        "options": {
+            "a": "Michael Jordan",
+            "b": "Kobe Bryant",
+            "c": "LeBron James",
+            "d": "Wilt Chamberlain"
+        },
+        "answer": "d",
+        "media": null
+    },
+    {
+        "category": "NBA Trivia",
+        "question": "Which player is nicknamed 'The King'?",
+        "options": {
+            "a": "Kevin Durant",
+            "b": "LeBron James",
+            "c": "Giannis Antetokounmpo",
+            "d": "Stephen Curry"
+        },
+        "answer": "b",
+        "media": null
+    },
+    {
+        "category": "NBA Trivia",
+        "question": "What does NBA stand for?",
+        "options": {
+            "a": "National Basketball Association",
+            "b": "North American Basketball Alliance",
+            "c": "National Basketball Academy",
+            "d": "National Ball Athletes"
+        },
+        "answer": "a",
+        "media": null
+    },
+    {
+        "category": "NBA Trivia",
+        "question": "Which team did Michael Jordan play for most of his career?",
+        "options": {
+            "a": "Detroit Pistons",
+            "b": "Boston Celtics",
+            "c": "Washington Wizards",
+            "d": "Chicago Bulls"
+        },
+        "answer": "d",
+        "media": null
+    },
+    {
+        "category": "NFL Trivia",
+        "question": "How many points is a touchdown worth in the NFL?",
+        "options": {
+            "a": "3",
+            "b": "5",
+            "c": "6",
+            "d": "7"
+        },
+        "answer": "c",
+        "media": null
+    },
+    {
+        "category": "NFL Trivia",
+        "question": "Which quarterback has won the most Super Bowl rings?",
+        "options": {
+            "a": "Peyton Manning",
+            "b": "Joe Montana",
+            "c": "Patrick Mahomes",
+            "d": "Tom Brady"
+        },
+        "answer": "d",
+        "media": null
+    },
+    {
+        "category": "NFL Trivia",
+        "question": "How many yards long is an NFL football field (end zone to end zone)?",
+        "options": {
+            "a": "80",
+            "b": "100",
+            "c": "110",
+            "d": "120"
+        },
+        "answer": "d",
+        "media": null
+    },
+    {
+        "category": "NFL Trivia",
+        "question": "What does NFL stand for?",
+        "options": {
+            "a": "National Football League",
+            "b": "North American Football League",
+            "c": "National Field League",
+            "d": "National Football Legacy"
+        },
+        "answer": "a",
+        "media": null
+    },
+    {
+        "category": "NFL Trivia",
+        "question": "Which team has won the most Super Bowls?",
+        "options": {
+            "a": "Dallas Cowboys",
+            "b": "San Francisco 49ers",
+            "c": "New England Patriots",
+            "d": "Pittsburgh Steelers"
+        },
+        "answer": "c",
+        "media": null
+    },
+    {
+        "category": "Music Trivia",
+        "question": "Who is known as the 'King of Pop'?",
+        "options": {
+            "a": "Prince",
+            "b": "Elvis Presley",
+            "c": "Michael Jackson",
+            "d": "David Bowie"
+        },
+        "answer": "c",
+        "media": null
+    },
+    {
+        "category": "Music Trivia",
+        "question": "Which band recorded 'Bohemian Rhapsody'?",
+        "options": {
+            "a": "The Beatles",
+            "b": "Led Zeppelin",
+            "c": "Pink Floyd",
+            "d": "Queen"
+        },
+        "answer": "d",
+        "media": null
+    },
+    {
+        "category": "Music Trivia",
+        "question": "How many strings does a standard guitar have?",
         "options": {
             "a": "4",
             "b": "5",
             "c": "6",
-            "d": "It raises an error"
+            "d": "7"
         },
-        "answer": "b"
+        "answer": "c",
+        "media": null
     },
     {
-        "question": "Which loop is guaranteed to execute its body at least once?",
+        "category": "Music Trivia",
+        "question": "What does BPM stand for in music?",
         "options": {
-            "a": "for loop",
-            "b": "while loop",
-            "c": "Python has no such loop",
-            "d": "Both for and while"
+            "a": "Beats Per Measure",
+            "b": "Beats Per Minute",
+            "c": "Bass Per Mix",
+            "d": "Bars Per Melody"
         },
-        "answer": "c"
+        "answer": "b",
+        "media": null
     },
     {
-        "question": "What symbol is used for single-line comments in Python?",
+        "category": "Music Trivia",
+        "question": "Which artist released the album 'Thriller' in 1982?",
         "options": {
-            "a": "//",
-            "b": "/*",
-            "c": "#",
-            "d": "--"
+            "a": "Prince",
+            "b": "Madonna",
+            "c": "Michael Jackson",
+            "d": "Whitney Houston"
         },
-        "answer": "c"
+        "answer": "c",
+        "media": null
     },
     {
-        "question": "What is the index of the first element in a Python list?",
+        "category": "Art",
+        "question": "Who painted the Mona Lisa?",
         "options": {
-            "a": "1",
-            "b": "-1",
-            "c": "0",
-            "d": "It depends on the list"
+            "a": "Michelangelo",
+            "b": "Raphael",
+            "c": "Leonardo da Vinci",
+            "d": "Caravaggio"
         },
-        "answer": "c"
+        "answer": "c",
+        "media": null
+    },
+    {
+        "category": "Art",
+        "question": "Which artist famously cut off part of his own ear?",
+        "options": {
+            "a": "Paul Gauguin",
+            "b": "Pablo Picasso",
+            "c": "Claude Monet",
+            "d": "Vincent van Gogh"
+        },
+        "answer": "d",
+        "media": null
+    },
+    {
+        "category": "Art",
+        "question": "What painting style is characterized by small, distinct dots of color?",
+        "options": {
+            "a": "Impressionism",
+            "b": "Pointillism",
+            "c": "Cubism",
+            "d": "Surrealism"
+        },
+        "answer": "b",
+        "media": null
+    },
+    {
+        "category": "Art",
+        "question": "Where is the Sistine Chapel located?",
+        "options": {
+            "a": "Florence, Italy",
+            "b": "Paris, France",
+            "c": "Athens, Greece",
+            "d": "Vatican City"
+        },
+        "answer": "d",
+        "media": null
+    },
+    {
+        "category": "Art",
+        "question": "Who sculpted 'The Thinker'?",
+        "options": {
+            "a": "Donatello",
+            "b": "Bernini",
+            "c": "Auguste Rodin",
+            "d": "Michelangelo"
+        },
+        "answer": "c",
+        "media": null
     }
 ]
