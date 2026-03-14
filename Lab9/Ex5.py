@@ -1,19 +1,16 @@
-import json  # Corrected import
+import json
+import os
 
-QUESTION = {
-    "What is the airspeed of an unladen swallow in miles/hr?": {"12", "10", "15", 8},
-    "What is the capital of Texas?": {"Austin", "Houston", "Dallas"},
-    "The Last Supper was painted by which artist?": {"Leonardo da Vinci", "Michelangelo", "Raphael"}
-}
+# Dynamically construct the path to questions.json
+input_file_path = os.path.join(os.path.dirname(__file__), "../Assignment1/questions.json")
+output_file_path = os.path.join(os.path.dirname(__file__), "quiz_questions.json")
 
-filename = "quiz_data.json"
+# Load the dictionary of quiz questions
+with open(input_file_path, "r") as infile:
+    quiz_questions = json.load(infile)
 
-with open(filename, "r") as file:
-    data = json.load(file)
+# Save the dictionary as a JSON file
+with open(output_file_path, "w") as outfile:
+    json.dump(quiz_questions, outfile, indent=4)
 
-for question in data["questions"]:
-    print(f"Question: {question['question']}")
-    print("Answers:")
-    for answer in question['answers']:
-        print(f"- {answer}")
-    print()
+print(f"Quiz questions saved to {output_file_path}")

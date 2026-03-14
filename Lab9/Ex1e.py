@@ -1,9 +1,14 @@
-with open("names.txt") as file_object:
+import os
+
+# Dynamically construct the path to names.txt
+file_path = os.path.join(os.path.dirname(__file__), "names.txt")
+
+with open(file_path) as file_object:
     contents_list = file_object.readlines()
     print(contents_list)
     print(f"Number of names: {len(contents_list)}")
 
-with open("names.txt", "a") as file_object:
+with open(file_path, "a") as file_object:
     print("Appending new name to the file...")
     file_object.write("Adams, Amy\n")
     contents_list.append("Adams, Amy")

@@ -1,9 +1,14 @@
+import os
+
+# Dynamically construct the path to names.txt
+file_path = os.path.join(os.path.dirname(__file__), "names.txt")
+
 # STEP 1: Use 'a' (append) mode to add to the end without deleting existing data
-with open("names.txt", "a") as f:
+with open(file_path, "a") as f:
     f.write("\nAnthony Liao")
 
 # STEP 2: Re-open in 'r' mode to see the updated contents
-with open("names.txt", "r") as f:
+with open(file_path, "r") as f:
     print("Updated file contents:")
     print(f.read())
 
