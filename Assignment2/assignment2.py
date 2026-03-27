@@ -299,9 +299,11 @@ def _export_prompt(pt, default_name):
         filename = f"{default_name}.xlsx"
     if not filename.endswith(".xlsx"):
         filename += ".xlsx"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    filepath = os.path.join(script_dir, filename)
     try:
-        pt.to_excel(filename)
-        print(f"  Saved to '{filename}'.")
+        pt.to_excel(filepath)
+        print(f"  Saved to '{filepath}'.")
     except Exception as e:
         print(f"  [ERROR] Could not save file: {e}")
 
@@ -372,7 +374,9 @@ def main():
     print("=" * 50)
 
     # Accept optional filepath argument from command line
-    filepath = sys.argv[1] if len(sys.argv) > 1 else "sales_data.csv"
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    default_csv = os.path.join(script_dir, "sales_data.csv")
+    filepath = sys.argv[1] if len(sys.argv) > 1 else default_csv
 
     df = load_data(filepath)
     if df is None:
