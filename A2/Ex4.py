@@ -87,7 +87,9 @@ def display_menu(dataframe):
         else:
             print("Invalid choice. Please select a valid option.")
 
-
+    except ValueError:
+        print("Invalid input. Please enter a number corresponding to the menu options.")
+        
 # Call load_csv to load the data and print the first 10 rows
 # filename = 'https://drive.google.com/uc?id=1Fv_vhoN
 filename = "sales_data_test.csv"

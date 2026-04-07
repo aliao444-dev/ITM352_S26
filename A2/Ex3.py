@@ -34,15 +34,12 @@ def load_csv(file_path):
             print(f"Warning: Missing columns in the dataset: {missing_columns}")
         else:
             print("All required columns are present.")
-
-
         return df
         
     except Exception as e:
         print(f"An error occurred while loading the file: {e}")
         return None
         
-
 def defisplay_initial_rows():
     print("Enter rowws to display:")
     print(f" - Enter a number 1 to (len)(dataframe)")
@@ -67,9 +64,7 @@ def display_menu(dataframe):
         ("Exit", exit_program)
     )
 
-if __name__ == "__main__":
-    main()
-    s
 
-    sales_data
-    sales_data
+
+
+def display_menu(data fram)
