@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Results — Quiz Game{% endblock %}
+
+{% block content %}
+<div class="card center-card">
+    <h1>Quiz Complete!</h1>
+
+    <!--
+        FR-10: "Calculate and display the user's final score upon quiz completion.
+                Show detailed feedback, such as the number of correct/incorrect answers,
+                time taken, and areas for improvement."
+        Shows score, accuracy percentage, and total time taken.
+    -->
+    <div class="result-summary">
+        <div class="result-stat">
+            <span class="stat-num">{{ score }}/{{ total }}</span>
+            <span class="stat-label">Score</span>
+        </div>
+        <div class="result-stat">
+            <span class="stat-num">{{ ((score / total) * 100)|int }}%</span>
+            <span class="stat-label">Accuracy</span>
+        </div>
+        <div class="result-stat">
+            <span class="stat-num">{{ time_str }}</span>
+            <span class="stat-label">Time</span>
+        </div>
+    </div>
+
+    <!--
+        IR-01: (Required) Persistent User ID & Score History.
+        Show the last 5 scores from this player's history stored in scores.json.
+    -->
+    {% if history %}
+    <h2>Your Recent Scores</h2>
+    <table class="score-table">
+        <thead>
+            <tr><th>Date</th><th>Score</th><th>Time</th></tr>
+        </thead>
+        <tbody>
+            {% for h in history|reverse %}
+            <tr>
+                <td>{{ h.date }}</td>
+                <td>{{ h.score }} / {{ h.total }}</td>
+                <td>{{ h.time }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+
+    <!--
+        IR-02: (Required) Leaderboard — top 10 scores across all players, stored in scores.json.
+        The current player's row is highlighted so they can see where they ranked.
+    -->
+    <h2>🏆 Leaderboard</h2>
+    <table class="score-table">
+        <thead>
+            <tr><th>#</th><th>Player</th><th>Score</th></tr>
+        </thead>
+        <tbody>
+            {% for entry in leaderboard %}
+            <!-- highlight the current player's row -->
+            <tr class="{{ 'highlight' if entry.username == username }}">
+                <td>{{ loop.index }}</td>
+                <td>{{ entry.username }}</td>
+                <td>{{ entry.score }} / {{ entry.total }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="result-actions">
+        <a href="{{ url_for('quiz') }}"   class="btn btn-primary">Play Again</a>
+        <a href="{{ url_for('logout') }}" class="btn btn-secondary">Change User</a>
+    </div>
+</div>
+{% endblock %}

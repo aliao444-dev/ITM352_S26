@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Quiz Game{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <span class="nav-brand">🧠 Quiz Game</span>
+        {% if session.username %}
+        <span class="nav-user">
+            Logged in as <strong>{{ session.username }}</strong>
+            &nbsp;|&nbsp;
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </span>
+        {% endif %}
+    </nav>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!--
+        FR-01: "Design a clean and intuitive UI with HTML, CSS, and JavaScript (as needed)."
+        FR-02: "Create dynamic elements that respond to user actions, including question
+                display, answer options, and submission feedback."
+        page-specific JS variables (like TIME_LIMIT) must be defined BEFORE quiz.js loads
+    -->
+    {% block scripts %}{% endblock %}
+    <script src="{{ url_for('static', filename='quiz.js') }}"></script>
+</body>
+</html>

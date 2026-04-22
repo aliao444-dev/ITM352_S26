@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Question {{ current }} — Quiz Game{% endblock %}
+
+{% block content %}
+
+<!--
+    IR-08: (Extra Credit) Progress bar shows how far through the quiz the player is.
+    Width is calculated as (current / total * 100)%.
+-->
+<div class="progress-wrap">
+    <div class="progress-bar" style="width: {{ (current / total * 100)|int }}%"></div>
+</div>
+<div class="progress-label">Question {{ current }} of {{ total }} &nbsp;|&nbsp; Score: {{ score }}</div>
+
+<div class="card quiz-card">
+
+    <!-- IR-03: (Extra Credit) Countdown timer per question.
+         quiz.js reads TIME_LIMIT and counts it down; auto-submits blank when it hits 0. -->
+    <div class="timer-wrap">
+        <span class="timer-label">Time left:</span>
+        <span id="timer" class="timer">{{ time_limit }}</span>s
+    </div>
+
+    <div class="question-meta">{{ question.category }}</div>
+    <h2 class="question-text">{{ question.question }}</h2>
+
+    <!--
+        FR-02: "Create dynamic elements that respond to user actions, including
+                question display, answer options, and submission feedback."
+        FR-05: "Provide users with real-time feedback on their answer selections."
+        The form submits via JavaScript fetch() instead of a normal page reload,
+        so we can show green/red feedback (IR-07) before moving to the next question.
+    -->
+    <form id="answer-form" method="POST" action="/quiz">
+        <div class="options-grid" id="options">
+            {% for opt in options %}
+            <button type="button"
+                    class="option-btn"
+                    data-key="{{ opt.key }}"
+                    onclick="selectAnswer('{{ opt.key }}')">
+                <span class="opt-key">{{ opt.key.upper() }}</span>
+                {{ opt.text }}
+            </button>
+            {% endfor %}
+        </div>
+        <!-- Hidden field — JavaScript fills this in when a button is clicked -->
+        <input type="hidden" id="answer-input" name="answer" value="">
+    </form>
+
+    <!-- IR-07: (Extra Credit) "Provide users with real-time feedback on their answer selections."
+         This div is hidden by default; quiz.js fills it with correct/wrong message after answering. -->
+    <div id="feedback" class="feedback hidden"></div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!--
+    FR-02: "Create dynamic elements that respond to user actions."
+    These JS variables must be set BEFORE quiz.js loads (base.html loads the script after this block).
+    quiz.js reads TIME_LIMIT to know how long the countdown should be.
+-->
+<script>
+    const TIME_LIMIT = {{ time_limit }};
+    const QUIZ_URL   = "{{ url_for('quiz') }}";
+</script>
+{% endblock %}

@@ -1,0 +1,185 @@
+/*
+ * FR-01: "Design a clean and intuitive UI with HTML, CSS, and JavaScript (as needed)."
+ * FR-02: "Create dynamic elements that respond to user actions, including question
+ *         display, answer options, and submission feedback."
+ *
+ * This file handles all visual styling. quiz.js handles the dynamic JS behavior.
+ * ── Global styles — clean, simple layout ────────────────────────────────────── */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+    color: #222;
+    min-height: 100vh;
+}
+
+/* ── Navbar ─────────────────────────────────────────────────────────────────── */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2c3e50;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+}
+.nav-brand { font-size: 1.2rem; font-weight: bold; }
+.nav-user  { font-size: 0.9rem; }
+.nav-user a { color: #aed6f1; text-decoration: none; }
+.nav-user a:hover { text-decoration: underline; }
+
+/* ── Page layout ─────────────────────────────────────────────────────────────── */
+
+.container  { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+.center-card { max-width: 580px; margin: 2rem auto; }
+
+/* White card used for every main section */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+/* ── Forms ───────────────────────────────────────────────────────────────────── */
+
+label { display: block; font-weight: 600; margin-bottom: 0.3rem; }
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.6rem 0.9rem;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+input[type="text"]:focus { outline: none; border-color: #2980b9; }
+
+/* ── Buttons ─────────────────────────────────────────────────────────────────── */
+
+.btn {
+    display: inline-block;
+    padding: 0.65rem 1.4rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.btn-primary            { background: #2980b9; color: #fff; }
+.btn-primary:hover      { background: #1f618d; }
+.btn-secondary          { background: #7f8c8d; color: #fff; margin-left: 0.5rem; }
+.btn-secondary:hover    { background: #616a6b; }
+
+/* ── Error alert ─────────────────────────────────────────────────────────────── */
+
+.alert       { padding: 0.7rem 1rem; border-radius: 6px; margin-bottom: 1rem; }
+.alert-error { background: #fde8e8; color: #c0392b; border: 1px solid #e74c3c; }
+
+/* ── IR-08: Progress bar ──────────────────────────────────────────────────────── */
+
+.progress-wrap {
+    background: #dde;
+    border-radius: 4px;
+    height: 10px;
+    margin-bottom: 0.3rem;
+}
+/* The inner bar width is set inline by the template (e.g. style="width: 40%") */
+.progress-bar {
+    background: #2980b9;
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s;
+}
+.progress-label { font-size: 0.85rem; color: #555; margin-bottom: 1rem; }
+
+/* ── IR-03: Countdown timer ───────────────────────────────────────────────────── */
+
+.timer-wrap  { text-align: right; margin-bottom: 1rem; font-size: 0.95rem; }
+.timer       { font-weight: bold; font-size: 1.3rem; color: #2980b9; }
+.timer.warning { color: #e67e22; }   /* turns orange at 10s */
+.timer.danger  { color: #e74c3c; }   /* turns red at 5s */
+
+/* ── Quiz answer buttons ─────────────────────────────────────────────────────── */
+
+.quiz-card { padding: 1.5rem 2rem; }
+.question-meta { font-size: 0.8rem; color: #888; text-transform: uppercase;
+                 letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+.question-text { font-size: 1.2rem; margin-bottom: 1.5rem; line-height: 1.5; }
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.option-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    background: #f5f6fa;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s, border-color 0.15s;
+}
+.option-btn:hover:not(:disabled) { background: #eaf4fc; border-color: #2980b9; }
+.option-btn .opt-key {
+    background: #dde;
+    border-radius: 4px;
+    padding: 0.1rem 0.45rem;
+    font-weight: bold;
+    font-size: 0.85rem;
+    min-width: 1.5rem;
+    text-align: center;
+}
+.option-btn:disabled { cursor: default; }
+
+/* IR-07: green/red visual feedback states applied by quiz.js */
+.option-btn.correct { background: #d4efdf; border-color: #27ae60; }
+.option-btn.wrong   { background: #fde8e8; border-color: #e74c3c; }
+
+/* Feedback text shown below the options after answering */
+.feedback            { padding: 0.75rem 1rem; border-radius: 6px;
+                       font-weight: 600; margin-top: 0.5rem; }
+.feedback.correct-msg { background: #d4efdf; color: #1e8449; }
+.feedback.wrong-msg   { background: #fde8e8; color: #c0392b; }
+.hidden { display: none; }
+
+/* ── Results page ────────────────────────────────────────────────────────────── */
+
+/* FR-10: "Calculate and display the user's final score upon quiz completion.
+ *         Show detailed feedback, such as the number of correct/incorrect answers,
+ *         time taken, and areas for improvement."
+ * three stat boxes side by side (score / accuracy / time) */
+.result-summary {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+.result-stat  { text-align: center; }
+.stat-num     { display: block; font-size: 2.5rem; font-weight: bold; color: #2980b9; }
+.stat-label   { font-size: 0.85rem; color: #888; }
+
+/* Shared table style used for history and leaderboard */
+.score-table { width: 100%; border-collapse: collapse; margin: 0.5rem 0 1.5rem; }
+.score-table th, .score-table td {
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+.score-table th          { background: #f5f6fa; font-weight: 600; }
+/* IR-02: highlight the current player's row in the leaderboard */
+.score-table tr.highlight { background: #fef9e7; font-weight: bold; }
+
+.result-actions { margin-top: 1.5rem; text-align: center; }

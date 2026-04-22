@@ -1,0 +1,70 @@
+{
+    "users": {
+        "ant": {
+            "high_score": 5,
+            "history": [
+                {
+                    "score": 2,
+                    "total": 7,
+                    "category": "Technology",
+                    "time": "47s",
+                    "date": "2026-04-21 22:31"
+                },
+                {
+                    "score": 5,
+                    "total": 32,
+                    "time": "1m 13s",
+                    "date": "2026-04-21 23:24"
+                }
+            ]
+        },
+        "asd": {
+            "high_score": 3,
+            "history": [
+                {
+                    "score": 0,
+                    "total": 7,
+                    "category": "Technology",
+                    "time": "14s",
+                    "date": "2026-04-21 22:31"
+                },
+                {
+                    "score": 3,
+                    "total": 7,
+                    "category": "Technology",
+                    "time": "27s",
+                    "date": "2026-04-21 22:38"
+                }
+            ]
+        },
+        "testuser": {
+            "high_score": 0,
+            "history": []
+        }
+    },
+    "leaderboard": [
+        {
+            "username": "ant",
+            "score": 5,
+            "total": 32
+        },
+        {
+            "username": "asd",
+            "score": 3,
+            "total": 7,
+            "category": "Technology"
+        },
+        {
+            "username": "ant",
+            "score": 2,
+            "total": 7,
+            "category": "Technology"
+        },
+        {
+            "username": "asd",
+            "score": 0,
+            "total": 7,
+            "category": "Technology"
+        }
+    ]
+}

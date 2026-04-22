@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Login — Quiz Game{% endblock %}
+
+{% block content %}
+<div class="card center-card">
+    <h1>Welcome to the Quiz Game</h1>
+    <p>Enter your username to start. If you've played before, your score history will be shown.</p>
+
+    <!--
+        FR-11: "Ensure input validation for text fields, login, and registration.
+                Display user-friendly error messages when validation fails or data
+                loading issues occur."
+        Shows a red error message if the user submitted a blank username.
+    -->
+    {% if error %}
+    <div class="alert alert-error">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST" action="/">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username"
+               placeholder="Enter your username" autofocus required>
+        <button type="submit" class="btn btn-primary">Start Quiz</button>
+    </form>
+</div>
+{% endblock %}

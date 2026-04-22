@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Choose Category — Quiz Game{% endblock %}
+
+{% block content %}
+<div class="card center-card">
+
+    {% if returning %}
+    <h2>Welcome back, {{ username }}! 👋</h2>
+    {% if history %}
+    <div class="history-box">
+        <h3>Your Recent Scores</h3>
+        <table class="score-table">
+            <thead>
+                <tr><th>Date</th><th>Category</th><th>Score</th><th>Time</th></tr>
+            </thead>
+            <tbody>
+                {% for h in history|reverse %}
+                <tr>
+                    <td>{{ h.date }}</td>
+                    <td>{{ h.category }}</td>
+                    <td>{{ h.score }} / {{ h.total }}</td>
+                    <td>{{ h.time }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+    {% else %}
+    <h2>Hi {{ username }}! Let's play! 🎉</h2>
+    {% endif %}
+
+    <h3>Choose a Category</h3>
+    <form method="POST" action="/category">
+        <div class="category-grid">
+            <label class="category-card">
+                <input type="radio" name="category" value="All" checked>
+                <span>All Categories</span>
+            </label>
+            {% for cat in categories %}
+            <label class="category-card">
+                <input type="radio" name="category" value="{{ cat }}">
+                <span>{{ cat }}</span>
+            </label>
+            {% endfor %}
+        </div>
+        <button type="submit" class="btn btn-primary">Start Quiz ▶</button>
+    </form>
+</div>
+{% endblock %}
